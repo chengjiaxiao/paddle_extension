@@ -67,6 +67,31 @@ python ocr_api_service.py  # 从父目录运行
 
 ### 3. 基本用法
 
+#### 使用 OCR 处理脚本（推荐）
+
+最简单的文档处理方式：
+
+```bash
+# 处理 PDF 文件
+python ocr_processor.py document.pdf
+
+# 处理图片文件
+python ocr_processor.py image.png
+
+# 指定输出目录
+python ocr_processor.py document.pdf --output results
+
+# 自定义 PDF 转换 DPI
+python ocr_processor.py document.pdf --dpi 300
+
+# 保存 JSON 结果
+python ocr_processor.py document.pdf --save-json
+```
+
+**输出：**
+- 独立的 markdown 文件：`page_001.md`, `page_002.md`, ...
+- 合并的 markdown 文件：`merged_output.md`
+
 #### 直接使用 PaddleOCR
 
 ```python
@@ -229,10 +254,13 @@ for img_path in image_dir.glob("*.png"):
 
 ```
 paddle_ocr_vl/
+├── ocr_processor.py          # 主 OCR 处理脚本（新增！）
 ├── ocr_vl.ipynb              # 主演示笔记本
 ├── ocr_base.ipynb            # 基础 OCR 实验
 ├── convert_table.py          # Markdown 转 Excel 转换器
 ├── 启动OCR服务_paddle_env.bat # Windows 服务启动器
+├── requirements.txt          # Python 依赖项
+├── .gitignore                # Git 忽略规则
 ├── output/                   # OCR 输出目录
 │   ├── *.md                  # Markdown 结果
 │   ├── *.json                # JSON 结果

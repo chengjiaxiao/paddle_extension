@@ -67,6 +67,31 @@ Service will be available at `http://localhost:8000`
 
 ### 3. Basic Usage
 
+#### Using the OCR Processor Script (Recommended)
+
+The easiest way to process documents:
+
+```bash
+# Process a PDF file
+python ocr_processor.py document.pdf
+
+# Process an image file
+python ocr_processor.py image.png
+
+# Specify output directory
+python ocr_processor.py document.pdf --output results
+
+# Custom DPI for PDF conversion
+python ocr_processor.py document.pdf --dpi 300
+
+# Save JSON results
+python ocr_processor.py document.pdf --save-json
+```
+
+**Output:**
+- Individual markdown files: `page_001.md`, `page_002.md`, ...
+- Merged markdown file: `merged_output.md`
+
 #### Direct PaddleOCR Usage
 
 ```python
@@ -229,10 +254,13 @@ Output files follow consistent patterns:
 
 ```
 paddle_ocr_vl/
+├── ocr_processor.py          # Main OCR processing script (NEW!)
 ├── ocr_vl.ipynb              # Main demo notebook
 ├── ocr_base.ipynb            # Basic OCR experiments
 ├── convert_table.py          # Markdown to Excel converter
 ├── 启动OCR服务_paddle_env.bat # Windows service launcher
+├── requirements.txt          # Python dependencies
+├── .gitignore                # Git ignore rules
 ├── output/                   # OCR output directory
 │   ├── *.md                  # Markdown results
 │   ├── *.json                # JSON results
