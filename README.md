@@ -5,6 +5,8 @@
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.100+-green.svg)](https://fastapi.tiangolo.com/)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
+English | [简体中文](README_zh.md)
+
 A powerful OCR (Optical Character Recognition) module based on PaddleOCR Vision-Language models, providing table extraction, document processing, and markdown/Excel conversion capabilities.
 
 ## Features
